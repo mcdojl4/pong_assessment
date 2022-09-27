@@ -8,22 +8,18 @@ namespace pongAssessment
 {
     public class Controller
     {
-        private const int STARTBALL = 50;
+        private const int STARTBALL = 200;
 
-        private List<Image> images;
+        private Ball ball;
+
         public Controller(Graphics graphics)
         {
-            images = new List<Image>();
-
-           
+            ball = new Ball(graphics, Color.Aqua, new Point(400, STARTBALL), new Point(20, 20));
         }
 
         public void Run()
         {
-            //foreach (Image image in images)
-            //{
-            //    image.Draw();
-            //}
+            ball.Draw();
         }
     }
 }
