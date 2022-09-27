@@ -14,7 +14,7 @@ namespace pongAssessment
 
         public override void Draw()
         {
-            graphics.FillEllipse(brush, new Rectangle(position.X, position.Y, SIZE, SIZE));
+            graphics.FillEllipse(brush, new Rectangle(position.X, position.Y, BALLSIZE, BALLSIZE));
         }
     }
 }

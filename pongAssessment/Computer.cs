@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace pongAssessment
 {
-    public class Paddle : Graphic
+    public class Computer : Graphic
     {
-        public Paddle(Graphics graphics, Color color, Point position, Point velocity) : base(graphics, color, position, velocity)
+        public Computer(Graphics graphics, Color color, Point position, Point velocity) : base(graphics, color, position, velocity)
         {
         }
 
