@@ -19,11 +19,18 @@ namespace pongAssessment
 
         public void Up()
         {
-            position.Y -= 10;
+            if ((position.Y) >= 0)
+            {
+                position.Y -= 10;
+            }
         }
         public void Down()
         {
-            position.Y += 10;
+            if ((position.Y + PADDLESIZE_Y) <= 700)
+            {
+                position.Y += 10;
+            }
+            
         }
     }
 }
