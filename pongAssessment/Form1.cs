@@ -19,5 +19,23 @@ namespace pongAssessment
             Refresh();
             controller.Run();
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    controller.PaddleUp();
+                    break;
+
+                case Keys.Down:
+                    controller.PaddleDown();
+                    break;
+
+                default:
+
+                    break;
+            }
+        }
     }
 }

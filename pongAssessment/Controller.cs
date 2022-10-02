@@ -30,5 +30,14 @@ namespace pongAssessment
             paddle.Draw();
             computer.Draw();
         }
+
+        public void PaddleUp()
+        {
+            paddle.Up();
+        }
+        public void PaddleDown()
+        {
+            paddle.Down();
+        }
     }
 }

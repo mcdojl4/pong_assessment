@@ -16,5 +16,14 @@ namespace pongAssessment
         {
             graphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
         }
+
+        public void Up()
+        {
+            position.Y -= 10;
+        }
+        public void Down()
+        {
+            position.Y += 10;
+        }
     }
 }
