@@ -8,9 +8,9 @@ namespace pongAssessment
 {
     public abstract class Graphic
     {
-        public int BALLSIZE = 10;
-        public const int PADDLESIZE_X = 10; 
-        public const int PADDLESIZE_Y = 150; 
+        public int BALLSIZE = 20;
+        public const int PADDLESIZE_X = 20; 
+        public const int PADDLESIZE_Y = 200; 
 
         //protected Graphics graphics;
         protected Graphics bufferGraphics;

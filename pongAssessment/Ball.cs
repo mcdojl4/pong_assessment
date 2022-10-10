@@ -16,5 +16,16 @@ namespace pongAssessment
         {
             bufferGraphics.FillEllipse(brush, new Rectangle(position.X, position.Y, BALLSIZE, BALLSIZE));
         }
+
+        public void Move()
+        {
+            position.X += velocity.X;
+            position.Y += velocity.Y;
+        }
+
+        public void Bounce()
+        {
+
+        }
     }
 }

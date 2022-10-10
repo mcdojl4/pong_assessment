@@ -21,14 +21,14 @@ namespace pongAssessment
         {
             if ((position.Y) >= 0)
             {
-                position.Y -= 10;
+                position.Y -= velocity.Y;
             }
         }
         public void Down()
         {
             if ((position.Y + PADDLESIZE_Y) <= 700)
             {
-                position.Y += 10;
+                position.Y += velocity.Y;
             }
             
         }

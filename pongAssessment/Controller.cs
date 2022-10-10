@@ -8,10 +8,16 @@ namespace pongAssessment
 {
     public class Controller
     {
-        private const int STARTBALL = 200;
+        //object positions
+        private const int STARTBALL_X = 500 - (10 / 2);
+        private const int STARTBALL_Y = (700 / 2) - (10 / 2);
         private const int STARTPADDLE = 20;
-        private const int STARTCOMPUTER = 776;
-        private const int STARTPADDLES_Y = 120;
+        private const int STARTCOMPUTER = (1000 - 40) - Paddle.PADDLESIZE_X;
+        private const int STARTPADDLES_Y = (700 / 2) - (Paddle.PADDLESIZE_Y / 2);
+
+        //object velocitys
+        private const int PADDLEVELOCITY_Y = 5;
+        private const int BALLVELOCITY = 10;
 
         private Ball ball;
         private Paddle paddle;
@@ -19,9 +25,9 @@ namespace pongAssessment
 
         public Controller(Graphics buffergraphics)
         {
-            ball = new Ball(buffergraphics, Color.Aqua, new Point(400, STARTBALL), new Point(20, 20));
-            paddle = new Paddle(buffergraphics, Color.White, new Point(STARTPADDLE, STARTPADDLES_Y), new Point(10, 10));
-            computer = new Computer(buffergraphics, Color.White, new Point(STARTCOMPUTER, STARTPADDLES_Y), new Point(10, 10));
+            ball = new Ball(buffergraphics, Color.Aqua, new Point(STARTBALL_X, STARTBALL_Y), new Point(BALLVELOCITY, BALLVELOCITY));
+            paddle = new Paddle(buffergraphics, Color.White, new Point(STARTPADDLE, STARTPADDLES_Y), new Point(0, PADDLEVELOCITY_Y));
+            computer = new Computer(buffergraphics, Color.White, new Point(STARTCOMPUTER, STARTPADDLES_Y), new Point(0, PADDLEVELOCITY_Y));
         }
 
         public void Run()
@@ -29,6 +35,7 @@ namespace pongAssessment
             ball.Draw();
             paddle.Draw();
             computer.Draw();
+            ball.Move();
         }
 
         public void PaddleUp()
