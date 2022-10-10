@@ -8,13 +8,13 @@ namespace pongAssessment
 {
     public class Paddle : Graphic
     {
-        public Paddle(Graphics graphics, Color color, Point position, Point velocity) : base(graphics, color, position, velocity)
+        public Paddle(Graphics bufferGraphics, Color color, Point position, Point velocity) : base( bufferGraphics, color, position, velocity)
         {
         }
 
         public override void Draw()
         {
-            graphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
+            bufferGraphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
         }
 
         public void Up()

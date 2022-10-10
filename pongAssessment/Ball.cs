@@ -8,13 +8,13 @@ namespace pongAssessment
 {
     public class Ball : Graphic
     {
-        public Ball(Graphics graphics, Color color, Point position, Point velocity) : base(graphics, color, position, velocity)
+        public Ball(Graphics bufferGraphics, Color color, Point position, Point velocity) : base(bufferGraphics, color, position, velocity)
         {
         }
 
         public override void Draw()
         {
-            graphics.FillEllipse(brush, new Rectangle(position.X, position.Y, BALLSIZE, BALLSIZE));
+            bufferGraphics.FillEllipse(brush, new Rectangle(position.X, position.Y, BALLSIZE, BALLSIZE));
         }
     }
 }

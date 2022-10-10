@@ -12,19 +12,19 @@ namespace pongAssessment
         public const int PADDLESIZE_X = 10; 
         public const int PADDLESIZE_Y = 150; 
 
-        protected Graphics graphics;
+        //protected Graphics graphics;
+        protected Graphics bufferGraphics;
         protected Color color;
         protected Point position;
         protected Point velocity;
         protected Brush brush;
-        
-        public Graphic(Graphics graphics, Color color, Point position, Point velocity)
-        {     
-            this.graphics = graphics;
+        public Graphic(Graphics bufferGraphics, Color color, Point position, Point velocity)
+        {
+            this.bufferGraphics = bufferGraphics;
             this.color = color;
-            brush = new SolidBrush(color); 
+            brush = new SolidBrush(color);
             this.position = position;
-            this.velocity = velocity;   
+            this.velocity = velocity;
         }
 
         public abstract void Draw();    

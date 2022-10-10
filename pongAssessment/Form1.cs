@@ -3,13 +3,16 @@ namespace pongAssessment
     public partial class Form1 : Form
     {
         public Graphics graphics;
+        private Graphics bufferGraphics;
+        private Bitmap bufferImage;
         public Controller controller;
 
         public Form1()
         {
             InitializeComponent();
-
             graphics = CreateGraphics();
+            bufferImage = new Bitmap(Width, Height);
+            bufferGraphics = Graphics.FromImage(bufferImage);
             controller = new Controller(graphics);
             timer1.Enabled = true;
         }
@@ -18,6 +21,7 @@ namespace pongAssessment
         {
             Refresh();
             controller.Run();
+            graphics.DrawImage(bufferImage, 0, 0);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

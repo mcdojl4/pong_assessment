@@ -17,11 +17,11 @@ namespace pongAssessment
         private Paddle paddle;
         private Computer computer;
 
-        public Controller(Graphics graphics)
+        public Controller(Graphics buffergraphics)
         {
-            ball = new Ball(graphics, Color.Aqua, new Point(400, STARTBALL), new Point(20, 20));
-            paddle = new Paddle(graphics, Color.White, new Point(STARTPADDLE, STARTPADDLES_Y), new Point(10, 10));
-            computer = new Computer(graphics, Color.White, new Point(STARTCOMPUTER, STARTPADDLES_Y), new Point(10, 10));
+            ball = new Ball(buffergraphics, Color.Aqua, new Point(400, STARTBALL), new Point(20, 20));
+            paddle = new Paddle(buffergraphics, Color.White, new Point(STARTPADDLE, STARTPADDLES_Y), new Point(10, 10));
+            computer = new Computer(buffergraphics, Color.White, new Point(STARTCOMPUTER, STARTPADDLES_Y), new Point(10, 10));
         }
 
         public void Run()
