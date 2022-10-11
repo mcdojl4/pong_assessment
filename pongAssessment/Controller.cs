@@ -36,6 +36,7 @@ namespace pongAssessment
             paddle.Draw();
             computer.Draw();
             ball.Move();
+            ball.Bounce();
         }
 
         public void PaddleUp()

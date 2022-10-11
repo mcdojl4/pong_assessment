@@ -10,7 +10,8 @@ namespace pongAssessment
     {
         public int BALLSIZE = 20;
         public const int PADDLESIZE_X = 20; 
-        public const int PADDLESIZE_Y = 200; 
+        public const int PADDLESIZE_Y = 200;
+        public Size Boundaries;
 
         //protected Graphics graphics;
         protected Graphics bufferGraphics;
@@ -25,6 +26,7 @@ namespace pongAssessment
             brush = new SolidBrush(color);
             this.position = position;
             this.velocity = velocity;
+            Boundaries = new Size(1000, 700);
         }
 
         public abstract void Draw();    

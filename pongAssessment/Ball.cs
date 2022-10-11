@@ -8,6 +8,9 @@ namespace pongAssessment
 {
     public class Ball : Graphic
     {
+        private bool collision_y = true;
+
+
         public Ball(Graphics bufferGraphics, Color color, Point position, Point velocity) : base(bufferGraphics, color, position, velocity)
         {
         }
@@ -19,13 +22,29 @@ namespace pongAssessment
 
         public void Move()
         {
-            position.X += velocity.X;
             position.Y += velocity.Y;
+            position.X += velocity.X;
+
         }
 
         public void Bounce()
         {
-
+            if (position.Y + 80 >= Boundaries.Height)
+            {
+                velocity.Y *= -1;
+            }
+            if (position.Y < 0)
+            {
+                velocity.Y *= -1;
+            }
+            if (position.X + 120 >= Boundaries.Width)
+            {
+                velocity.X *= -1;
+            }
+            if (position.X < 0)
+            {
+                velocity.X *= -1;
+            }
         }
     }
 }
