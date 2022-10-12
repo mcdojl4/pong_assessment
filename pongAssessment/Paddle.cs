@@ -8,6 +8,9 @@ namespace pongAssessment
 {
     public class Paddle : Graphic
     {
+        public int paddle_position;
+        public int paddle_position_size;
+
         public Paddle(Graphics bufferGraphics, Color color, Point position, Point velocity) : base( bufferGraphics, color, position, velocity)
         {
         }
@@ -32,5 +35,20 @@ namespace pongAssessment
             }
             
         }
+
+        public int Position_Paddle()
+        {
+            paddle_position = position.Y;
+
+            return paddle_position;
+        }
+
+        public int Position_Paddle_Size()
+        {
+            paddle_position_size = position.Y + PADDLESIZE_Y;
+
+            return paddle_position_size;
+        }
+
     }
 }

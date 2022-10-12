@@ -37,6 +37,14 @@ namespace pongAssessment
             computer.Draw();
             ball.Move();
             ball.Bounce();
+            Hit();
+        }
+
+        public void Reload()
+        {
+            paddle.Position_Paddle();
+            paddle.Position_Paddle_Size();
+            ball.Ball_Position();
         }
 
         public void PaddleUp()
@@ -46,6 +54,17 @@ namespace pongAssessment
         public void PaddleDown()
         {
             paddle.Down();
+        }
+
+        public void Hit()
+        {
+            if (ball.Pong1() == true) {
+                //ball.Pong();
+                if (paddle.Position_Paddle() <= ball.Ball_Position() && paddle.Position_Paddle_Size() >= ball.Ball_Position())
+                {
+                    ball.Pong();
+                }
+            }
         }
     }
 }

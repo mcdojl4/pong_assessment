@@ -21,7 +21,9 @@ namespace pongAssessment
         {
             Refresh();
             controller.Run();
+            controller.Reload();
             graphics.DrawImage(bufferImage, 0, 0);
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

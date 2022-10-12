@@ -8,8 +8,8 @@ namespace pongAssessment
 {
     public class Ball : Graphic
     {
-        private bool collision_y = true;
 
+        public int ball_position;
 
         public Ball(Graphics bufferGraphics, Color color, Point position, Point velocity) : base(bufferGraphics, color, position, velocity)
         {
@@ -23,7 +23,7 @@ namespace pongAssessment
         public void Move()
         {
             position.Y += velocity.Y;
-            position.X += velocity.X;
+            position.X -= velocity.X;
 
         }
 
@@ -41,10 +41,34 @@ namespace pongAssessment
             {
                 velocity.X *= -1;
             }
-            if (position.X < 0)
-            {
-                velocity.X *= -1;
-            }
+            //if (position.X < 0)
+            //{
+            //    velocity.X *= -1;
+            //}
         }
+
+        public int Ball_Position()
+        {
+            ball_position = position.Y + BALLSIZE;
+
+            return ball_position;
+        }
+
+        public void Pong()
+        {
+            velocity.X *= -1;
+        }
+
+        public bool Pong1()
+        {
+            bool query = false;
+            if (position.X <= 40)
+            {
+                query = true;
+                
+            }
+            return query;
+        }
+
     }
 }
