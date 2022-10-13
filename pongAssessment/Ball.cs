@@ -37,14 +37,6 @@ namespace pongAssessment
             {
                 velocity.Y *= -1;
             }
-            if (position.X + 120 >= Boundaries.Width)
-            {
-                velocity.X *= -1;
-            }
-            //if (position.X < 0)
-            //{
-            //    velocity.X *= -1;
-            //}
         }
 
         public int Ball_Position()
@@ -54,21 +46,31 @@ namespace pongAssessment
             return ball_position;
         }
 
-        public void Pong()
+        public void Hit()
         {
             velocity.X *= -1;
         }
 
-        public bool Pong1()
+        public bool Paddle_Pong()
         {
-            bool query = false;
+            bool player = false;
             if (position.X <= 40)
             {
-                query = true;
+                player = true;
                 
             }
-            return query;
+            return player;
         }
 
+        public bool Computer_Pong()
+        {
+            bool computer = false;
+            if (position.X + BALLSIZE >= Boundaries.Width - 70)
+            {
+                computer = true;
+
+            }
+            return computer;
+        }
     }
 }

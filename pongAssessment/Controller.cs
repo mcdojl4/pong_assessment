@@ -16,7 +16,7 @@ namespace pongAssessment
         private const int STARTPADDLES_Y = (700 / 2) - (Paddle.PADDLESIZE_Y / 2);
 
         //object velocitys
-        private const int PADDLEVELOCITY_Y = 5;
+        private const int PADDLEVELOCITY_Y = 7;
         private const int BALLVELOCITY = 10;
 
         private Ball ball;
@@ -37,16 +37,20 @@ namespace pongAssessment
             computer.Draw();
             ball.Move();
             ball.Bounce();
-            Hit();
+            Computer_Movement();
+            Paddle_Hit();
+            Computer_Hit();
         }
 
         public void Reload()
         {
             paddle.Position_Paddle();
             paddle.Position_Paddle_Size();
+            computer.Position_Computer_Middle();
             ball.Ball_Position();
         }
 
+        //Player move methods
         public void PaddleUp()
         {
             paddle.Up();
@@ -56,14 +60,41 @@ namespace pongAssessment
             paddle.Down();
         }
 
-        public void Hit()
+        //Player paddle
+        public void Paddle_Hit()
         {
-            if (ball.Pong1() == true) {
+            if (ball.Paddle_Pong() == true) {
                 //ball.Pong();
                 if (paddle.Position_Paddle() <= ball.Ball_Position() && paddle.Position_Paddle_Size() >= ball.Ball_Position())
                 {
-                    ball.Pong();
+                    ball.Hit();
                 }
+            }
+        }
+
+        //Computer paddle
+        public void Computer_Hit()
+        {
+            if (ball.Computer_Pong() == true)
+            {
+                //ball.Pong();
+                if (computer.Position_Computer() <= ball.Ball_Position() && computer.Position_Computer_Size() >= ball.Ball_Position())
+                {
+                    ball.Hit();
+                }
+            }
+        }
+
+        //Computer movement
+        public void Computer_Movement()
+        {
+            if (ball.Ball_Position() + 20 < computer.Position_Computer_Middle())
+            {
+                computer.Up();
+            }
+            if (ball.Ball_Position() > computer.Position_Computer_Middle())
+            {
+                computer.Down();
             }
         }
     }
