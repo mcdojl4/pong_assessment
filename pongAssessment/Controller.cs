@@ -50,6 +50,13 @@ namespace pongAssessment
             ball.Ball_Position();
         }
 
+        public void Restart()
+        {
+            ball.Restart();
+            paddle.Restart();
+            computer.Restart();
+        }
+
         //Player move methods
         public void PaddleUp()
         {

@@ -14,7 +14,7 @@ namespace pongAssessment
             bufferImage = new Bitmap(Width, Height);
             bufferGraphics = Graphics.FromImage(bufferImage);
             controller = new Controller(graphics);
-            timer1.Enabled = true;
+            button4.Hide();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -42,6 +42,37 @@ namespace pongAssessment
 
                     break;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Hide();
+            button1.Hide();
+            button2.Hide();
+            button3.Hide();
+            button4.Show();
+            timer1.Enabled = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            controller.Restart();
+            label1.Hide();
+            button1.Hide();
+            button2.Hide();
+            button3.Hide();
+            button4.Show();
+            timer1.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            label1.Show();
+            button1.Show();
+            button2.Show();
+            button3.Show(); 
+            button4.Hide(); 
         }
     }
 }

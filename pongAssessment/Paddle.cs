@@ -20,9 +20,15 @@ namespace pongAssessment
             bufferGraphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
         }
 
+        public void Restart()
+        {
+            position.X = 20;
+            position.Y = (700 / 2) - (PADDLESIZE_Y / 2);
+        }
+
         public void Up()
         {
-            if ((position.Y) != 0)
+            if (position.Y >= 0)
             {
                 position.Y -= velocity.Y;
             }

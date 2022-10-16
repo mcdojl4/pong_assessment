@@ -22,9 +22,15 @@ namespace pongAssessment
 
         public void Move()
         {
-            position.Y += velocity.Y;
-            position.X -= velocity.X;
+                position.Y += velocity.Y;
+                position.X -= velocity.X;
+        }
 
+
+        public void Restart()
+        {
+            position.X = 500 - (10 / 2);
+            position.Y = (700 / 2) - (10 / 2);
         }
 
         public void Bounce()

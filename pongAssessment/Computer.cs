@@ -22,6 +22,12 @@ namespace pongAssessment
             bufferGraphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
         }
 
+        public void Restart()
+        {
+            position.X = (1000 - 40) - PADDLESIZE_X;
+            position.Y = (700 / 2) - (PADDLESIZE_Y / 2);
+        }
+
         //Computer paddle position
         public int Position_Computer()
         {
