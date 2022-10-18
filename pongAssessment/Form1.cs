@@ -15,7 +15,6 @@ namespace pongAssessment
             bufferImage = new Bitmap(Width, Height);
             bufferGraphics = Graphics.FromImage(bufferImage);
             controller = new Controller(graphics);
-            button4.Hide();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
