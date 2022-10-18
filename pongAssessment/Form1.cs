@@ -10,6 +10,7 @@ namespace pongAssessment
         public Form1()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             graphics = CreateGraphics();
             bufferImage = new Bitmap(Width, Height);
             bufferGraphics = Graphics.FromImage(bufferImage);
@@ -38,8 +39,16 @@ namespace pongAssessment
                     controller.PaddleDown();
                     break;
 
-                default:
+                case Keys.Escape:
+                    timer1.Enabled = false;
+                    label1.Show();
+                    button1.Show();
+                    button2.Show();
+                    button3.Show();
+                    //button4.Hide();
+                    break;
 
+                default:
                     break;
             }
         }
@@ -50,7 +59,7 @@ namespace pongAssessment
             button1.Hide();
             button2.Hide();
             button3.Hide();
-            button4.Show();
+            //button4.Show();
             timer1.Enabled = true;
         }
 
@@ -61,18 +70,18 @@ namespace pongAssessment
             button1.Hide();
             button2.Hide();
             button3.Hide();
-            button4.Show();
+            //button4.Show();
             timer1.Enabled = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = false;
-            label1.Show();
-            button1.Show();
-            button2.Show();
-            button3.Show(); 
-            button4.Hide(); 
-        }
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    timer1.Enabled = false;
+        //    label1.Show();
+        //    button1.Show();
+        //    button2.Show();
+        //    button3.Show();
+        //    button4.Hide();
+        //}
     }
 }

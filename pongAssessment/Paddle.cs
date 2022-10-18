@@ -39,7 +39,7 @@ namespace pongAssessment
             {
                 position.Y += velocity.Y;
             }
-            
+
         }
 
         public int Position_Paddle()
