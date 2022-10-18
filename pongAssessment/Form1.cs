@@ -15,6 +15,8 @@ namespace pongAssessment
             bufferImage = new Bitmap(Width, Height);
             bufferGraphics = Graphics.FromImage(bufferImage);
             controller = new Controller(graphics);
+
+            label4.Hide();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -23,7 +25,24 @@ namespace pongAssessment
             controller.Run();
             controller.Reload();
             graphics.DrawImage(bufferImage, 0, 0);
+            label2.Text = (controller.paddleScoreboard.ToString());
+            label3.Text = (controller.computerScoreboard.ToString());
 
+
+            if (controller.paddleScoreboard == 10)
+            {
+                timer1.Enabled = false;
+                label4.Text = "Congrats you won " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString() + ".";
+                label4.Show();
+
+            }
+            else if (controller.computerScoreboard == 10)
+            {
+                timer1.Enabled = false;
+                label4.Text = "Sorry you lost " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString() + ".";
+                label4.Show();
+
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -44,7 +63,6 @@ namespace pongAssessment
                     button1.Show();
                     button2.Show();
                     button3.Show();
-                    //button4.Hide();
                     break;
 
                 default:
@@ -58,29 +76,17 @@ namespace pongAssessment
             button1.Hide();
             button2.Hide();
             button3.Hide();
-            //button4.Show();
             timer1.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            controller.Restart();
+            controller.Restart_Game();
             label1.Hide();
             button1.Hide();
             button2.Hide();
             button3.Hide();
-            //button4.Show();
             timer1.Enabled = true;
         }
-
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    timer1.Enabled = false;
-        //    label1.Show();
-        //    button1.Show();
-        //    button2.Show();
-        //    button3.Show();
-        //    button4.Hide();
-        //}
     }
 }

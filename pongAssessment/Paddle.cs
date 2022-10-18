@@ -10,6 +10,7 @@ namespace pongAssessment
     {
         public int paddle_position;
         public int paddle_position_size;
+        public int paddle_position_middle;
 
         public Paddle(Graphics bufferGraphics, Color color, Point position, Point velocity) : base( bufferGraphics, color, position, velocity)
         {

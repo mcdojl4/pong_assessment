@@ -16,8 +16,12 @@ namespace pongAssessment
         private const int STARTPADDLES_Y = (700 / 2) - (Paddle.PADDLESIZE_Y / 2);
 
         //object velocitys
-        private const int PADDLEVELOCITY_Y = 7;
-        private const int BALLVELOCITY = 10;
+        private const int PADDLEVELOCITY_Y = 20;
+        private const int BALLVELOCITY = 30;
+
+        //bool queries
+        public int paddleScoreboard;
+        public int computerScoreboard;
 
         private Ball ball;
         private Paddle paddle;
@@ -28,6 +32,9 @@ namespace pongAssessment
             ball = new Ball(buffergraphics, Color.Aqua, new Point(STARTBALL_X, STARTBALL_Y), new Point(BALLVELOCITY, BALLVELOCITY));
             paddle = new Paddle(buffergraphics, Color.White, new Point(STARTPADDLE, STARTPADDLES_Y), new Point(0, PADDLEVELOCITY_Y));
             computer = new Computer(buffergraphics, Color.White, new Point(STARTCOMPUTER, STARTPADDLES_Y), new Point(0, PADDLEVELOCITY_Y));
+
+            paddleScoreboard = 0;
+            computerScoreboard = 0;
         }
 
         public void Run()
@@ -40,6 +47,7 @@ namespace pongAssessment
             Computer_Movement();
             Paddle_Hit();
             Computer_Hit();
+            Score();
         }
 
         public void Reload()
@@ -55,6 +63,29 @@ namespace pongAssessment
             ball.Restart();
             paddle.Restart();
             computer.Restart();
+        }
+
+        public void Restart_Game()
+        {
+            Convert.ToString(paddleScoreboard = 0);
+            Convert.ToString(computerScoreboard = 0);
+            ball.Restart();
+            paddle.Restart();
+            computer.Restart();
+        }
+
+        public void Score()
+        {
+            if (ball.Computer_Score() == true)
+            {
+                computerScoreboard += 1;
+                Restart();
+            } 
+            else if (ball.Paddle_Score() == true)
+            {
+                paddleScoreboard += 1;
+                Restart();
+            }
         }
 
         //Player move methods
