@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace pongAssessment
 {
@@ -50,13 +51,21 @@ namespace pongAssessment
 
         public void Bounce()
         {
-            if (position.Y + 80 >= Boundaries.Height)
+            if ((position.Y + BALLSIZE) + 65 >= Boundaries.Height)
             {
                 velocity.Y *= -1;
+                using (var soundPlayer = new SoundPlayer(Properties.Resources.pongHit))
+                {
+                    soundPlayer.Play();
+                }
             }
-            if (position.Y < 0)
+            if (position.Y - 15 <= 0)
             {
                 velocity.Y *= -1;
+                using (var soundPlayer = new SoundPlayer(Properties.Resources.pongHit))
+                {
+                    soundPlayer.Play();
+                }
             }
         }
 

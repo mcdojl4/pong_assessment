@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace pongAssessment
 {
@@ -67,8 +68,8 @@ namespace pongAssessment
 
         public void Restart_Game()
         {
-            Convert.ToString(paddleScoreboard = 0);
-            Convert.ToString(computerScoreboard = 0);
+            Convert.ToString(paddleScoreboard = 9);
+            Convert.ToString(computerScoreboard = 9);
             ball.Restart();
             paddle.Restart();
             computer.Restart();
@@ -106,6 +107,10 @@ namespace pongAssessment
                 if (paddle.Position_Paddle() <= ball.Ball_Position() && paddle.Position_Paddle_Size() >= ball.Ball_Position())
                 {
                     ball.Hit();
+                    using (var soundPlayer = new SoundPlayer(Properties.Resources.pongHit))
+                    {
+                        soundPlayer.Play();
+                    }
                 }
             }
         }
@@ -119,6 +124,10 @@ namespace pongAssessment
                 if (computer.Position_Computer() <= ball.Ball_Position() && computer.Position_Computer_Size() >= ball.Ball_Position())
                 {
                     ball.Hit();
+                    using (var soundPlayer = new SoundPlayer(Properties.Resources.pongHit))
+                    {
+                        soundPlayer.Play(); 
+                    }
                 }
             }
         }
