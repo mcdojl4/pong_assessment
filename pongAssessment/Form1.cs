@@ -26,6 +26,7 @@ namespace pongAssessment
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //When timer ticks game runs
             Refresh();
             controller.Run();
             controller.Reload();
@@ -84,6 +85,7 @@ namespace pongAssessment
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //Lets player press buttons to move
             switch (e.KeyCode)
             {
                 case Keys.Up:
@@ -109,6 +111,7 @@ namespace pongAssessment
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Makes game play and unpause
             label1.Hide();
             button1.Hide();
             button2.Hide();
@@ -118,6 +121,7 @@ namespace pongAssessment
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Makes game restart
             controller.Restart_Game();
             label1.Hide();
             button1.Hide();
@@ -128,6 +132,7 @@ namespace pongAssessment
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //Makes it return from highscore screen
             listBox1.Hide();
             label1.Show();
             label2.Show();
@@ -140,6 +145,7 @@ namespace pongAssessment
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Makes high score screen
             label1.Hide();
             label2.Hide();
             label3.Hide();

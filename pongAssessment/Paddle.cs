@@ -18,15 +18,18 @@ namespace pongAssessment
 
         public override void Draw()
         {
+            //Draws paddle
             bufferGraphics.FillRectangle(brush, new Rectangle(position.X, position.Y, PADDLESIZE_X, PADDLESIZE_Y));
         }
 
         public void Restart()
         {
+            //Resets position
             position.X = 20;
-            position.Y = (700 / 2) - (PADDLESIZE_Y / 2);
+            position.Y = (500 / 2) - (PADDLESIZE_Y / 2);
         }
 
+        //Player move methods
         public void Up()
         {
             if (position.Y >= 0)
@@ -43,6 +46,7 @@ namespace pongAssessment
 
         }
 
+        //Keeps track of player position
         public int Position_Paddle()
         {
             paddle_position = position.Y;

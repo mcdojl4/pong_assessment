@@ -9,8 +9,8 @@ namespace pongAssessment
     public abstract class Graphic
     {
         public int BALLSIZE = 20;
-        public const int PADDLESIZE_X = 20; 
-        public const int PADDLESIZE_Y = 200;
+        public const int PADDLESIZE_X = 10; 
+        public const int PADDLESIZE_Y = 150;
         public Size Boundaries;
 
         //protected Graphics graphics;
@@ -21,12 +21,13 @@ namespace pongAssessment
         protected Brush brush;
         public Graphic(Graphics bufferGraphics, Color color, Point position, Point velocity)
         {
+            //Graphics variables
             this.bufferGraphics = bufferGraphics;
             this.color = color;
             brush = new SolidBrush(color);
             this.position = position;
             this.velocity = velocity;
-            Boundaries = new Size(1000, 700);
+            Boundaries = new Size(1000, 500);
         }
 
         public abstract void Draw();    

@@ -21,11 +21,13 @@ namespace pongAssessment
 
         public override void Draw()
         {
+            //Draws ball
             bufferGraphics.FillEllipse(brush, new Rectangle(position.X, position.Y, BALLSIZE, BALLSIZE));
         }
 
         public void Move()
         {
+            //Moves ball
                 position.Y += velocity.Y;
                 position.X += velocity.X;
         }
@@ -33,6 +35,7 @@ namespace pongAssessment
 
         public void Restart()
         {
+            //Restarts ball at different positions
             Random rand = new Random();
             int random = rand.Next(1, 10);
             for (int i = 0; i < random; i++)
@@ -51,6 +54,7 @@ namespace pongAssessment
 
         public void Bounce()
         {
+            //Makes ball bounce of walls
             if ((position.Y + BALLSIZE) + 65 >= Boundaries.Height)
             {
                 velocity.Y *= -1;
@@ -71,6 +75,7 @@ namespace pongAssessment
 
         public int Ball_Position()
         {
+            //Allows ball position to be used in controller
             ball_position = position.Y + BALLSIZE;
 
             return ball_position;
@@ -78,13 +83,15 @@ namespace pongAssessment
 
         public void Hit()
         {
+            //Changes direction
             velocity.X *= -1;
         }
 
         public bool Paddle_Pong()
         {
+            //Checks if it collides with player
             bool player = false;
-            if (position.X <= 70)
+            if (position.X <= 60)
             {
                 player = true;
                 
@@ -94,8 +101,9 @@ namespace pongAssessment
 
         public bool Computer_Pong()
         {
+            //checks if collides with computer
             bool computer = false;
-            if (position.X + BALLSIZE >= Boundaries.Width - 70)
+            if (position.X + BALLSIZE >= Boundaries.Width - 65)
             {
                 computer = true;
 
@@ -105,8 +113,9 @@ namespace pongAssessment
 
         public bool Paddle_Score()
         {
+            //Checks if paddle wins
             playerScore = false;
-            if (position.X + BALLSIZE >= Boundaries.Width)
+            if (position.X + BALLSIZE >= Boundaries.Width + 20)
             {
                 playerScore = true;
 
@@ -116,8 +125,9 @@ namespace pongAssessment
 
         public bool Computer_Score()
         {
+            //checks if computer wins
             computerScore = false;
-            if (position.X < 0)
+            if (position.X <= -20)
             {
                 computerScore = true;
 
