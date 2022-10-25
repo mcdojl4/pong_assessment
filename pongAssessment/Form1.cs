@@ -43,37 +43,41 @@ namespace pongAssessment
                 {
                     soundPlayer.Play();
                 }
-                //Thread.Sleep(10000);
+                Thread.Sleep(5000);
                 label4.Hide();
                 label1.Show();
                 button1.Show();
                 button2.Show();
                 button3.Show();
 
-                StreamWriter sw = new StreamWriter(Properties.Resources.Highscore);
-                sw.WriteLine("WIN: " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString());
-                sw.Close();
+                using (StreamWriter sw = File.AppendText("Highscore.txt"))
+                {
+                    sw.WriteLine("WIN: " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString());
+                }
 
             }
             else if (controller.computerScoreboard == 10)
             {
                 timer1.Enabled = false;
-                label4.Text = "Sorry you lost " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString() + ".";
-                label4.Show();
                 using (var soundPlayer = new SoundPlayer(Properties.Resources.Losing_Horn))
                 {
                     soundPlayer.Play();
                 }
-                //Thread.Sleep(10000);
+                //label4.Text = "Sorry you lost " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString() + ".";
+                Thread.Sleep(3000);
+                label4.Text = "Please Say something";
+                label4.Show();
+                
                 label4.Hide();
                 label1.Show();
                 button1.Show();
                 button2.Show();
                 button3.Show();
 
-                StreamWriter sw = new StreamWriter(Properties.Resources.Highscore);
-                sw.WriteLine("LOSS: " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString());
-                sw.Close();
+                using (StreamWriter sw = File.AppendText("Highscore.txt"))
+                {
+                    sw.WriteLine("LOSS: " + controller.computerScoreboard.ToString() + " to " + controller.paddleScoreboard.ToString());
+                }
 
             }
         }
@@ -136,13 +140,37 @@ namespace pongAssessment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label1.Hide(); 
+            label1.Hide();
             label2.Hide();
             label3.Hide();
             button1.Hide();
             button2.Hide();
             button3.Hide();
             button4.Show();
+
+            int lineCounter = 0;
+            using (var reader = new StreamReader("Highscore.txt"))
+            {
+                while (reader.ReadLine() != null)
+                {
+                    lineCounter++;
+                }
+            }
+
+            using (StreamReader sr = new StreamReader("Highscore.txt"))
+            {
+                int Five = lineCounter - 5;
+                for (int i = 0; i < lineCounter; i++)
+                    if (i >= Five)
+                    {
+                        string temp = sr.ReadLine();
+                        listBox1.Items.Add(temp);
+                    }
+                    else
+                    {
+                        sr.ReadLine();
+                    }
+            }
             listBox1.Show();
         }
     }

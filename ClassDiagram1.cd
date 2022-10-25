@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="pongAssessment.Graphic">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAgAAAggAIAAAAAAAAACAAAQAAAAAIAA=</HashCode>
+      <FileName>Graphic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pongAssessment.Paddle">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAIAAAIAAgAAAAAAAAAAAAAIAAAAAAAAAgAAAAM=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pongAssessment.Controller">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAkAAAAgBAAAgCDAEAAAAAUABACAAACIEECgAAAAI=</HashCode>
+      <FileName>Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pongAssessment.Ball">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEBAgAgAgIAIAgCAAAIAAAAAAAgAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Ball.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pongAssessment.Computer">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAIAAAAAAwAgAAAAIAgAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Computer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pongAssessment.Form1">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAADAAABEAAgCAAAECAEA4IAgAAHAIAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

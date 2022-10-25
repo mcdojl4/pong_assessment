@@ -50,9 +50,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(429, 65);
+            this.label1.Location = new System.Drawing.Point(375, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "PONG Game";
             // 
@@ -60,9 +60,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(406, 99);
+            this.button1.Location = new System.Drawing.Point(355, 74);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 60);
+            this.button1.Size = new System.Drawing.Size(116, 45);
             this.button1.TabIndex = 2;
             this.button1.TabStop = false;
             this.button1.Text = "Play ";
@@ -73,9 +74,10 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(406, 165);
+            this.button2.Location = new System.Drawing.Point(355, 124);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 60);
+            this.button2.Size = new System.Drawing.Size(116, 45);
             this.button2.TabIndex = 3;
             this.button2.TabStop = false;
             this.button2.Text = "Highscores";
@@ -86,9 +88,10 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(406, 231);
+            this.button3.Location = new System.Drawing.Point(355, 173);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 60);
+            this.button3.Size = new System.Drawing.Size(116, 45);
             this.button3.TabIndex = 4;
             this.button3.TabStop = false;
             this.button3.Text = "Restart";
@@ -100,9 +103,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(129, 65);
+            this.label2.Location = new System.Drawing.Point(113, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 20);
+            this.label2.Size = new System.Drawing.Size(13, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "0";
             // 
@@ -111,9 +114,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(879, 65);
+            this.label3.Location = new System.Drawing.Point(769, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 20);
+            this.label3.Size = new System.Drawing.Size(13, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "0";
             // 
@@ -122,9 +125,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(341, 205);
+            this.label4.Location = new System.Drawing.Point(382, 230);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "ScoreBoard";
             // 
@@ -132,9 +135,10 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(429, 329);
+            this.button4.Location = new System.Drawing.Point(375, 247);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 27);
+            this.button4.Size = new System.Drawing.Size(80, 20);
             this.button4.TabIndex = 8;
             this.button4.TabStop = false;
             this.button4.Text = "Return";
@@ -144,18 +148,19 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(406, 99);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(477, 74);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(133, 224);
+            this.listBox1.Size = new System.Drawing.Size(117, 169);
             this.listBox1.TabIndex = 9;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(982, 653);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
@@ -166,7 +171,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Pong Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
